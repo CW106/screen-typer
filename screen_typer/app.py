@@ -401,8 +401,9 @@ class App:
             except Exception:                        # noqa: BLE001
                 cfg = {}
         pref = cfg.get("lang")
+        default_prefix = "en" if ENGLISH_UI else "zh"
         self.var_lang.set(pref if pref in langs else
-                          next((x for x in langs if x.startswith("zh")), langs[0]))
+                          next((x for x in langs if x.startswith(default_prefix)), langs[0]))
         for key, var in (("wpm", self.var_wpm), ("acc", self.var_acc), ("jitter", self.var_jit),
                          ("typo", self.var_typo), ("delay", self.var_delay),
                          ("scale", self.var_scale), ("interval", self.var_interval)):
