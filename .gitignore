@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+captures/
+dev/
+.screen_typer.json
+*.log
